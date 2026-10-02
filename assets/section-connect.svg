@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 70" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="con-line-l" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.6" />
+    </linearGradient>
+    <linearGradient id="con-line-r" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="pill-bg-con" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#070c18" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="pill-border-con" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#c084fc" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif; }
+    .font-mono { font-family: 'Fira Code', Consolas, monospace; }
+  </style>
+
+  <!-- Left & Right Accent Divider Lines -->
+  <line x1="20" y1="35" x2="260" y2="35" stroke="url(#con-line-l)" stroke-width="1.2" />
+  <circle cx="260" cy="35" r="2.5" fill="#38bdf8" />
+
+  <line x1="680" y1="35" x2="920" y2="35" stroke="url(#con-line-r)" stroke-width="1.2" />
+  <circle cx="680" cy="35" r="2.5" fill="#c084fc" />
+
+  <!-- Center Badge / Pill -->
+  <g transform="translate(265, 10)">
+    <rect x="0" y="0" width="410" height="50" rx="25" fill="url(#pill-bg-con)" stroke="url(#pill-border-con)" stroke-width="1.2" />
+    
+    <!-- Title -->
+    <text x="205" y="27" class="font-sans" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">
+      🌐  LET'S CONNECT &amp; COLLABORATE
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="205" y="42" class="font-mono" font-size="10.5" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.3">
+      Open for creative engineering, 3D web &amp; discussions
+    </text>
+  </g>
+</svg>

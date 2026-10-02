@@ -35,8 +35,10 @@
       50% { opacity: 1; stroke-opacity: 0.65; }
     }
 
-    @keyframes badgeGlow1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
-    @keyframes badgeGlow2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
 
     .font-sans {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif;
@@ -48,8 +50,9 @@
     .tcard {
       transition: all 0.3s ease;
     }
-    .row-1 { animation: badgeGlow1 5s ease-in-out infinite; }
-    .row-2 { animation: badgeGlow2 6s ease-in-out infinite 0.5s; }
+    .status-dot {
+      animation: dotPulse 3s ease-in-out infinite;
+    }
   </style>
 
   <!-- Container Box -->
@@ -63,7 +66,7 @@
   </g>
 
   <!-- ================= ROW 1 (5 items) ================= -->
-  <g transform="translate(36, 76)" class="row-1">
+  <g transform="translate(36, 76)">
 
     <!-- 1. JavaScript -->
     <g transform="translate(0, 0)">
@@ -72,7 +75,7 @@
       <text x="28" y="37" class="font-sans" font-size="16" font-weight="800" fill="#000000" text-anchor="middle">JS</text>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">JavaScript</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">ES6+ / Async</text>
-      <circle cx="145" cy="18" r="3" fill="#f7df1e" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#f7df1e" class="status-dot" />
     </g>
 
     <!-- 2. React -->
@@ -86,7 +89,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">React</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Hooks / SPA</text>
-      <circle cx="145" cy="18" r="3" fill="#61dafb" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#61dafb" class="status-dot" />
     </g>
 
     <!-- 3. HTML5 -->
@@ -99,7 +102,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">HTML5</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Semantic / A11y</text>
-      <circle cx="145" cy="18" r="3" fill="#e34f26" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#e34f26" class="status-dot" />
     </g>
 
     <!-- 4. CSS3 -->
@@ -112,7 +115,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">CSS3</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Flex / Glass / FX</text>
-      <circle cx="145" cy="18" r="3" fill="#33a9dc" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#33a9dc" class="status-dot" />
     </g>
 
     <!-- 5. Node.js -->
@@ -124,13 +127,13 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Node.js</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Runtime / API</text>
-      <circle cx="149" cy="18" r="3" fill="#22c55e" opacity="0.8" />
+      <circle cx="149" cy="18" r="3" fill="#22c55e" class="status-dot" />
     </g>
   </g>
 
 
   <!-- ================= ROW 2 (5 items) ================= -->
-  <g transform="translate(36, 146)" class="row-2">
+  <g transform="translate(36, 146)">
 
     <!-- 6. Python -->
     <g transform="translate(0, 0)">
@@ -144,7 +147,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Python</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">OpenCV / AI</text>
-      <circle cx="145" cy="18" r="3" fill="#fbbf24" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#fbbf24" class="status-dot" />
     </g>
 
     <!-- 7. Git -->
@@ -160,7 +163,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Git</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Version Control</text>
-      <circle cx="145" cy="18" r="3" fill="#f05032" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#f05032" class="status-dot" />
     </g>
 
     <!-- 8. GitHub -->
@@ -171,7 +174,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">GitHub</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">CI/CD / Actions</text>
-      <circle cx="145" cy="18" r="3" fill="#cbd5e1" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#cbd5e1" class="status-dot" />
     </g>
 
     <!-- 9. Figma -->
@@ -186,7 +189,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Figma</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">UI/UX &amp; Prototype</text>
-      <circle cx="145" cy="18" r="3" fill="#a855f7" opacity="0.8" />
+      <circle cx="145" cy="18" r="3" fill="#a855f7" class="status-dot" />
     </g>
 
     <!-- 10. VS Code -->
@@ -199,7 +202,7 @@
       </g>
       <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">VS Code</text>
       <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Development IDE</text>
-      <circle cx="149" cy="18" r="3" fill="#007acc" opacity="0.8" />
+      <circle cx="149" cy="18" r="3" fill="#007acc" class="status-dot" />
     </g>
   </g>
 </svg>

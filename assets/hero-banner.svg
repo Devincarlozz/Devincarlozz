@@ -265,9 +265,10 @@
 
   <!-- ================= RIGHT COLUMN: FUTURISTIC WORKSPACE VISUAL ================= -->
 
-  <g transform="translate(515, 38)" class="window-floating" filter="url(#soft-shadow)">
-    <!-- Glass Terminal Window -->
-    <rect x="0" y="0" width="375" height="348" rx="16" fill="url(#card-grad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" />
+  <g transform="translate(515, 38)">
+    <g class="window-floating" filter="url(#soft-shadow)">
+      <!-- Glass Terminal Window -->
+      <rect x="0" y="0" width="375" height="348" rx="16" fill="url(#card-grad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" />
 
     <!-- Terminal Titlebar -->
     <path d="M 0,16 Q 0,0 16,0 L 359,0 Q 375,0 375,16 L 375,40 L 0,40 Z" fill="#1e293b" fill-opacity="0.5" />
@@ -357,4 +358,5 @@
       <text x="28" y="22" class="mono-font" font-size="11" font-weight="600" fill="#f3e8ff">⚡ Interactive Apps</text>
     </g>
   </g>
+</g>
 </svg>
