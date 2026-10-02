@@ -1,0 +1,360 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 430" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070e" />
+      <stop offset="50%" stop-color="#0a1020" />
+      <stop offset="100%" stop-color="#060913" />
+    </linearGradient>
+
+    <!-- Glowing Orbs Gradients -->
+    <radialGradient id="cyan-glow" cx="20%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="purple-glow" cx="80%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.20" />
+      <stop offset="60%" stop-color="#818cf8" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="emerald-glow" cx="85%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Neon Borders & Glass Accents -->
+    <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.65" />
+      <stop offset="40%" stop-color="#818cf8" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#c084fc" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0.92" />
+    </linearGradient>
+
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#93c5fd" />
+    </linearGradient>
+
+    <linearGradient id="cyan-text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <filter id="blur-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" />
+    </filter>
+
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.03); }
+    }
+
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+      50% { transform: translateY(-16px) translateX(8px); opacity: 0.8; }
+    }
+
+    @keyframes floatWindow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    /* Staggered Cycling Typing Effect (15s total, 3s per role) */
+    @keyframes cycle1 {
+      0% { opacity: 0; transform: translateY(4px); }
+      4%, 18% { opacity: 1; transform: translateY(0); }
+      20%, 100% { opacity: 0; transform: translateY(-4px); }
+    }
+    @keyframes cycle2 {
+      0%, 20% { opacity: 0; transform: translateY(4px); }
+      24%, 38% { opacity: 1; transform: translateY(0); }
+      40%, 100% { opacity: 0; transform: translateY(-4px); }
+    }
+    @keyframes cycle3 {
+      0%, 40% { opacity: 0; transform: translateY(4px); }
+      44%, 58% { opacity: 1; transform: translateY(0); }
+      60%, 100% { opacity: 0; transform: translateY(-4px); }
+    }
+    @keyframes cycle4 {
+      0%, 60% { opacity: 0; transform: translateY(4px); }
+      64%, 78% { opacity: 1; transform: translateY(0); }
+      80%, 100% { opacity: 0; transform: translateY(-4px); }
+    }
+    @keyframes cycle5 {
+      0%, 80% { opacity: 0; transform: translateY(4px); }
+      84%, 98% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-4px); }
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+
+    .base-font {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+    .mono-font {
+      font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+    }
+
+    .window-floating {
+      animation: floatWindow 6s ease-in-out infinite;
+    }
+
+    .p1 { animation: floatParticle 7s ease-in-out infinite; }
+    .p2 { animation: floatParticle 9s ease-in-out infinite 1.5s; }
+    .p3 { animation: floatParticle 8s ease-in-out infinite 3s; }
+    .p4 { animation: floatParticle 10s ease-in-out infinite 2s; }
+
+    .role-1 { animation: cycle1 15s infinite; }
+    .role-2 { animation: cycle2 15s infinite; }
+    .role-3 { animation: cycle3 15s infinite; }
+    .role-4 { animation: cycle4 15s infinite; }
+    .role-5 { animation: cycle5 15s infinite; }
+
+    .cursor-blink {
+      animation: blink 0.8s infinite;
+    }
+    .neon-pulse {
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Card Background -->
+  <rect x="2" y="2" width="936" height="426" rx="20" fill="url(#bg-grad)" />
+
+  <!-- Ambient Glow Effects -->
+  <circle cx="160" cy="120" r="180" fill="url(#cyan-glow)" filter="url(#blur-filter)" />
+  <circle cx="820" cy="320" r="220" fill="url(#purple-glow)" filter="url(#blur-filter)" />
+  <circle cx="750" cy="110" r="160" fill="url(#emerald-glow)" filter="url(#blur-filter)" />
+
+  <!-- Subtle Futuristic Grid Pattern -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="40" y1="0" x2="40" y2="430" />
+    <line x1="120" y1="0" x2="120" y2="430" />
+    <line x1="200" y1="0" x2="200" y2="430" />
+    <line x1="280" y1="0" x2="280" y2="430" />
+    <line x1="360" y1="0" x2="360" y2="430" />
+    <line x1="440" y1="0" x2="440" y2="430" />
+    <line x1="520" y1="0" x2="520" y2="430" />
+    <line x1="600" y1="0" x2="600" y2="430" />
+    <line x1="680" y1="0" x2="680" y2="430" />
+    <line x1="760" y1="0" x2="760" y2="430" />
+    <line x1="840" y1="0" x2="840" y2="430" />
+    <line x1="920" y1="0" x2="920" y2="430" />
+    <line x1="0" y1="60" x2="940" y2="60" />
+    <line x1="0" y1="140" x2="940" y2="140" />
+    <line x1="0" y1="220" x2="940" y2="220" />
+    <line x1="0" y1="300" x2="940" y2="300" />
+    <line x1="0" y1="380" x2="940" y2="380" />
+  </g>
+
+  <!-- Floating Particles -->
+  <circle cx="110" cy="90" r="2.5" fill="#38bdf8" class="p1" />
+  <circle cx="470" cy="70" r="2" fill="#818cf8" class="p2" />
+  <circle cx="280" cy="380" r="2.5" fill="#34d399" class="p3" />
+  <circle cx="510" cy="340" r="2" fill="#c084fc" class="p4" />
+  <circle cx="890" cy="80" r="3" fill="#38bdf8" class="p1" />
+
+  <!-- Outer Glass Border -->
+  <rect x="2" y="2" width="936" height="426" rx="20" fill="none" stroke="url(#neon-border)" stroke-width="1.5" class="neon-pulse" />
+
+  <!-- ================= LEFT COLUMN CONTENT ================= -->
+
+  <!-- Top Status Pill -->
+  <g transform="translate(48, 42)">
+    <rect x="0" y="0" width="195" height="28" rx="14" fill="#0f172a" fill-opacity="0.8" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" />
+    <circle cx="16" cy="14" r="4.5" fill="#10b981" />
+    <circle cx="16" cy="14" r="8" fill="#10b981" opacity="0.3" />
+    <text x="30" y="18" class="mono-font" font-size="11" font-weight="600" fill="#93c5fd" letter-spacing="1">SYSTEM : ACTIVE</text>
+  </g>
+
+  <!-- Hero Title -->
+  <text x="48" y="118" class="base-font" font-size="40" font-weight="800" fill="url(#text-gradient)" letter-spacing="-0.5">
+    Hi, I'm BK <tspan font-weight="400">👋</tspan>
+  </text>
+
+  <!-- User Handle -->
+  <text x="48" y="152" class="base-font" font-size="20" font-weight="700" fill="url(#cyan-text)" letter-spacing="0.2">
+    @Devincarlozz
+  </text>
+
+  <!-- Subtitle -->
+  <text x="48" y="182" class="base-font" font-size="16" font-weight="600" fill="#cbd5e1" letter-spacing="1.5">
+    DEVELOPER  •  DESIGNER  •  BUILDER
+  </text>
+
+  <!-- Animated Typing Area -->
+  <g transform="translate(48, 204)">
+    <rect x="0" y="0" width="410" height="36" rx="8" fill="#0b1329" fill-opacity="0.75" stroke="#1e293b" stroke-width="1" />
+    <text x="14" y="23" class="mono-font" font-size="14" font-weight="700" fill="#38bdf8">&gt;</text>
+    <text x="32" y="23" class="mono-font" font-size="13" font-weight="500" fill="#64748b">role =</text>
+    
+    <!-- Cycling text items positioned at exact same spot -->
+    <g class="role-1">
+      <text x="92" y="23" class="mono-font" font-size="13" font-weight="600" fill="#f8fafc">"Developer"</text>
+    </g>
+    <g class="role-2">
+      <text x="92" y="23" class="mono-font" font-size="13" font-weight="600" fill="#38bdf8">"UI/UX Designer"</text>
+    </g>
+    <g class="role-3">
+      <text x="92" y="23" class="mono-font" font-size="13" font-weight="600" fill="#a855f7">"Web Developer"</text>
+    </g>
+    <g class="role-4">
+      <text x="92" y="23" class="mono-font" font-size="13" font-weight="600" fill="#34d399">"Creative Builder"</text>
+    </g>
+    <g class="role-5">
+      <text x="92" y="23" class="mono-font" font-size="13" font-weight="600" fill="#fbbf24">"Open Source Enthusiast"</text>
+    </g>
+    <text x="325" y="23" class="mono-font cursor-blink" font-size="15" font-weight="700" fill="#38bdf8">|</text>
+  </g>
+
+  <!-- Bio / Introduction -->
+  <text x="48" y="272" class="base-font" font-size="14" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+    I build modern web experiences, interactive applications and
+  </text>
+  <text x="48" y="294" class="base-font" font-size="14" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+    creative tools. Always learning, always creating.
+  </text>
+
+  <!-- Small Information Badges -->
+  <g transform="translate(48, 335)">
+    <!-- Badge 1: India -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="105" height="34" rx="10" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+      <text x="14" y="22" font-size="15">🇮🇳</text>
+      <text x="40" y="22" class="base-font" font-size="12" font-weight="600" fill="#e2e8f0">India</text>
+    </g>
+
+    <!-- Badge 2: Open Source -->
+    <g transform="translate(117, 0)">
+      <rect x="0" y="0" width="145" height="34" rx="10" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+      <text x="14" y="22" class="mono-font" font-size="12" font-weight="700" fill="#38bdf8">&lt;/&gt;</text>
+      <text x="44" y="22" class="base-font" font-size="12" font-weight="600" fill="#e2e8f0">Open Source</text>
+    </g>
+
+    <!-- Badge 3: Coffee + Code -->
+    <g transform="translate(274, 0)">
+      <rect x="0" y="0" width="148" height="34" rx="10" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+      <text x="14" y="22" font-size="14">☕</text>
+      <text x="38" y="22" class="base-font" font-size="12" font-weight="600" fill="#e2e8f0">Coffee + Code</text>
+    </g>
+  </g>
+
+
+  <!-- ================= RIGHT COLUMN: FUTURISTIC WORKSPACE VISUAL ================= -->
+
+  <g transform="translate(515, 38)" class="window-floating" filter="url(#soft-shadow)">
+    <!-- Glass Terminal Window -->
+    <rect x="0" y="0" width="375" height="348" rx="16" fill="url(#card-grad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" />
+
+    <!-- Terminal Titlebar -->
+    <path d="M 0,16 Q 0,0 16,0 L 359,0 Q 375,0 375,16 L 375,40 L 0,40 Z" fill="#1e293b" fill-opacity="0.5" />
+    <line x1="0" y1="40" x2="375" y2="40" stroke="#334155" stroke-opacity="0.6" stroke-width="1" />
+
+    <!-- Window Dots -->
+    <circle cx="22" cy="20" r="5.5" fill="#ef4444" />
+    <circle cx="38" cy="20" r="5.5" fill="#f59e0b" />
+    <circle cx="54" cy="20" r="5.5" fill="#10b981" />
+
+    <!-- Window Title -->
+    <text x="187" y="24" text-anchor="middle" class="mono-font" font-size="12" font-weight="500" fill="#94a3b8">
+      workspace.config.ts
+    </text>
+
+    <!-- Code Editor Content -->
+    <g transform="translate(18, 62)">
+      <!-- Line Numbers -->
+      <g class="mono-font" font-size="12" fill="#475569" text-anchor="end">
+        <text x="14" y="16">1</text>
+        <text x="14" y="38">2</text>
+        <text x="14" y="60">3</text>
+        <text x="14" y="82">4</text>
+        <text x="14" y="104">5</text>
+        <text x="14" y="126">6</text>
+        <text x="14" y="148">7</text>
+        <text x="14" y="170">8</text>
+        <text x="14" y="192">9</text>
+        <text x="14" y="214">10</text>
+      </g>
+
+      <!-- Code Line Content -->
+      <g class="mono-font" font-size="11.5" font-weight="500">
+        <!-- Line 1 -->
+        <text x="32" y="16">
+          <tspan fill="#c084fc">export const</tspan> <tspan fill="#60a5fa">developer</tspan> <tspan fill="#94a3b8">=</tspan> <tspan fill="#e2e8f0">{</tspan>
+        </text>
+        <!-- Line 2 -->
+        <text x="48" y="38">
+          <tspan fill="#93c5fd">name</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#34d399">"BK"</tspan><tspan fill="#94a3b8">,</tspan>
+        </text>
+        <!-- Line 3 -->
+        <text x="48" y="60">
+          <tspan fill="#93c5fd">github</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#38bdf8">"@Devincarlozz"</tspan><tspan fill="#94a3b8">,</tspan>
+        </text>
+        <!-- Line 4 -->
+        <text x="48" y="82">
+          <tspan fill="#93c5fd">passion</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#f472b6">"3D Web &amp; Experiences"</tspan><tspan fill="#94a3b8">,</tspan>
+        </text>
+        <!-- Line 5 -->
+        <text x="48" y="104">
+          <tspan fill="#93c5fd">stack</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#e2e8f0">[</tspan><tspan fill="#38bdf8">"React"</tspan><tspan fill="#94a3b8">, </tspan><tspan fill="#34d399">"Three.js"</tspan><tspan fill="#94a3b8">, </tspan><tspan fill="#fbbf24">"Python"</tspan><tspan fill="#e2e8f0">]</tspan><tspan fill="#94a3b8">,</tspan>
+        </text>
+        <!-- Line 6 -->
+        <text x="48" y="126">
+          <tspan fill="#93c5fd">openForCollab</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#f59e0b">true</tspan><tspan fill="#94a3b8">,</tspan>
+        </text>
+        <!-- Line 7 -->
+        <text x="48" y="148">
+          <tspan fill="#93c5fd">motto</tspan><tspan fill="#94a3b8">:</tspan> <tspan fill="#34d399">"Code • Craft • Ship"</tspan>
+        </text>
+        <!-- Line 8 -->
+        <text x="32" y="170">
+          <tspan fill="#e2e8f0">};</tspan>
+        </text>
+        <!-- Line 9 -->
+        <text x="32" y="192">
+          <tspan fill="#c084fc">await</tspan> <tspan fill="#60a5fa">developer</tspan><tspan fill="#94a3b8">.</tspan><tspan fill="#38bdf8">buildTheFuture</tspan><tspan fill="#e2e8f0">();</tspan>
+        </text>
+        <!-- Line 10 -->
+        <text x="32" y="214">
+          <tspan fill="#475569">// Ready for innovative ideas</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- Floating Interactive Badge (Glassmorphism Pill overlay) -->
+    <g transform="translate(18, 280)">
+      <rect x="0" y="0" width="160" height="34" rx="8" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="1" />
+      <circle cx="16" cy="17" r="4" fill="#38bdf8" />
+      <text x="28" y="22" class="mono-font" font-size="11" font-weight="600" fill="#e0f2fe">✦ 3D Web &amp; GSAP</text>
+    </g>
+
+    <g transform="translate(195, 280)">
+      <rect x="0" y="0" width="162" height="34" rx="8" fill="#0f172a" fill-opacity="0.9" stroke="#a855f7" stroke-opacity="0.6" stroke-width="1" />
+      <circle cx="16" cy="17" r="4" fill="#a855f7" />
+      <text x="28" y="22" class="mono-font" font-size="11" font-weight="600" fill="#f3e8ff">⚡ Interactive Apps</text>
+    </g>
+  </g>
+</svg>

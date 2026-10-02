@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 230" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="stack-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="50%" stop-color="#0a1020" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
+
+    <linearGradient id="stack-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.4" />
+    </linearGradient>
+
+    <linearGradient id="card-hover-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Logo Glows -->
+    <filter id="glow-react" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#61dafb" flood-opacity="0.5" />
+    </filter>
+    <filter id="glow-js" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#f7df1e" flood-opacity="0.4" />
+    </filter>
+    <filter id="glow-py" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#38bdf8" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes techPulse {
+      0%, 100% { opacity: 0.85; stroke-opacity: 0.25; }
+      50% { opacity: 1; stroke-opacity: 0.65; }
+    }
+
+    @keyframes badgeGlow1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+    @keyframes badgeGlow2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+
+    .font-sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+    .font-mono {
+      font-family: 'Fira Code', Consolas, monospace;
+    }
+
+    .tcard {
+      transition: all 0.3s ease;
+    }
+    .row-1 { animation: badgeGlow1 5s ease-in-out infinite; }
+    .row-2 { animation: badgeGlow2 6s ease-in-out infinite 0.5s; }
+  </style>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="936" height="226" rx="16" fill="url(#stack-bg)" stroke="url(#stack-border)" stroke-width="1.2" />
+
+  <!-- Section Header -->
+  <g transform="translate(36, 32)">
+    <text x="0" y="0" class="font-mono" font-size="18" font-weight="700" fill="#38bdf8">&lt;/&gt;</text>
+    <text x="32" y="0" class="font-sans" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="0.5">TECH STACK &amp; ARSENAL</text>
+    <text x="32" y="20" class="font-sans" font-size="12" font-weight="400" fill="#64748b">Languages, libraries, design tools and environments I leverage to engineer products</text>
+  </g>
+
+  <!-- ================= ROW 1 (5 items) ================= -->
+  <g transform="translate(36, 76)" class="row-1">
+
+    <!-- 1. JavaScript -->
+    <g transform="translate(0, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#f7df1e" stroke-opacity="0.3" stroke-width="1" />
+      <rect x="12" y="13" width="32" height="32" rx="6" fill="#f7df1e" />
+      <text x="28" y="37" class="font-sans" font-size="16" font-weight="800" fill="#000000" text-anchor="middle">JS</text>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">JavaScript</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">ES6+ / Async</text>
+      <circle cx="145" cy="18" r="3" fill="#f7df1e" opacity="0.8" />
+    </g>
+
+    <!-- 2. React -->
+    <g transform="translate(176, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#61dafb" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 17)" filter="url(#glow-react)">
+        <ellipse cx="12" cy="12" rx="12" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.3" transform="rotate(30 12 12)" />
+        <ellipse cx="12" cy="12" rx="12" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.3" transform="rotate(90 12 12)" />
+        <ellipse cx="12" cy="12" rx="12" ry="4.5" fill="none" stroke="#61dafb" stroke-width="1.3" transform="rotate(150 12 12)" />
+        <circle cx="12" cy="12" r="2.5" fill="#61dafb" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">React</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Hooks / SPA</text>
+      <circle cx="145" cy="18" r="3" fill="#61dafb" opacity="0.8" />
+    </g>
+
+    <!-- 3. HTML5 -->
+    <g transform="translate(352, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#e34f26" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 15)">
+        <path d="M 3,0 L 21,0 L 19,23 L 12,25 L 5,23 Z" fill="#e34f26" />
+        <path d="M 12,2 L 12,23 L 17.5,21.5 L 19,2 Z" fill="#ef652a" />
+        <path d="M 7,5 L 17,5 L 16.5,8 L 7,8 L 7.5,12 L 16.2,12 L 15.5,18 L 12,19 L 8.5,18 L 8.3,15 L 6.5,15 L 6.8,20 L 12,21.5 L 17.2,20 L 18,10 L 7,10 Z" fill="#ffffff" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">HTML5</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Semantic / A11y</text>
+      <circle cx="145" cy="18" r="3" fill="#e34f26" opacity="0.8" />
+    </g>
+
+    <!-- 4. CSS3 -->
+    <g transform="translate(528, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#1572b6" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 15)">
+        <path d="M 3,0 L 21,0 L 19,23 L 12,25 L 5,23 Z" fill="#1572b6" />
+        <path d="M 12,2 L 12,23 L 17.5,21.5 L 19,2 Z" fill="#33a9dc" />
+        <path d="M 7,5 L 17,5 L 16.5,8 L 7,8 L 7.5,12 L 16.2,12 L 15.5,18 L 12,19 L 8.5,18 L 8.3,15 L 6.5,15 L 6.8,20 L 12,21.5 L 17.2,20 L 18,10 L 7,10 Z" fill="#ffffff" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">CSS3</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Flex / Glass / FX</text>
+      <circle cx="145" cy="18" r="3" fill="#33a9dc" opacity="0.8" />
+    </g>
+
+    <!-- 5. Node.js -->
+    <g transform="translate(704, 0)">
+      <rect width="164" height="58" rx="12" fill="url(#card-hover-1)" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 15)">
+        <path d="M 13,1 L 23,7 L 23,19 L 13,25 L 3,19 L 3,7 Z" fill="#339933" />
+        <text x="13" y="17" class="font-sans" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">node</text>
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Node.js</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Runtime / API</text>
+      <circle cx="149" cy="18" r="3" fill="#22c55e" opacity="0.8" />
+    </g>
+  </g>
+
+
+  <!-- ================= ROW 2 (5 items) ================= -->
+  <g transform="translate(36, 146)" class="row-2">
+
+    <!-- 6. Python -->
+    <g transform="translate(0, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 15)" filter="url(#glow-py)">
+        <!-- Python dual snakes -->
+        <path d="M 12,2 C 7,2 7,5 7,5 L 7,8 L 13,8 L 13,9 L 4,9 C 4,9 2,9 2,13 C 2,17 4,17 4,17 L 6,17 L 6,15 C 6,13 8,11 10,11 L 14,11 C 16,11 17,10 17,8 L 17,5 C 17,2 12,2 12,2 Z" fill="#38bdf8" />
+        <circle cx="9" cy="5" r="1" fill="#ffffff" />
+        <path d="M 12,22 C 17,22 17,19 17,19 L 17,16 L 11,16 L 11,15 L 20,15 C 20,15 22,15 22,11 C 22,7 20,7 20,7 L 18,7 L 18,9 C 18,11 16,13 14,13 L 10,13 C 8,13 7,14 7,16 L 7,19 C 7,22 12,22 12,22 Z" fill="#fbbf24" />
+        <circle cx="15" cy="19" r="1" fill="#ffffff" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Python</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">OpenCV / AI</text>
+      <circle cx="145" cy="18" r="3" fill="#fbbf24" opacity="0.8" />
+    </g>
+
+    <!-- 7. Git -->
+    <g transform="translate(176, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#f05032" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(18, 16)">
+        <rect x="3" y="3" width="18" height="18" rx="3" fill="#f05032" transform="rotate(45 12 12)" />
+        <circle cx="8" cy="12" r="2" fill="#ffffff" />
+        <circle cx="16" cy="8" r="2" fill="#ffffff" />
+        <circle cx="16" cy="16" r="2" fill="#ffffff" />
+        <line x1="8" y1="12" x2="16" y2="8" stroke="#ffffff" stroke-width="1.5" />
+        <line x1="8" y1="12" x2="16" y2="16" stroke="#ffffff" stroke-width="1.5" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Git</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Version Control</text>
+      <circle cx="145" cy="18" r="3" fill="#f05032" opacity="0.8" />
+    </g>
+
+    <!-- 8. GitHub -->
+    <g transform="translate(352, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#cbd5e1" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(16, 15)">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="#ffffff" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">GitHub</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">CI/CD / Actions</text>
+      <circle cx="145" cy="18" r="3" fill="#cbd5e1" opacity="0.8" />
+    </g>
+
+    <!-- 9. Figma -->
+    <g transform="translate(528, 0)">
+      <rect width="160" height="58" rx="12" fill="url(#card-hover-1)" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(18, 15)">
+        <path d="M 6,0 C 9.3,0 12,2.7 12,6 C 12,9.3 9.3,12 6,12 C 2.7,12 0,9.3 0,6 C 0,2.7 2.7,0 6,0 Z" fill="#f24e1e" />
+        <path d="M 12,6 C 12,2.7 14.7,0 18,0 C 21.3,0 24,2.7 24,6 C 24,9.3 21.3,12 18,12 C 14.7,12 12,9.3 12,6 Z" fill="#ff7262" />
+        <path d="M 0,12 C 0,8.7 2.7,6 6,6 L 12,6 L 12,18 L 6,18 C 2.7,18 0,15.3 0,12 Z" fill="#a259ff" />
+        <path d="M 12,12 C 12,8.7 14.7,6 18,6 C 21.3,6 24,8.7 24,12 C 24,15.3 21.3,18 18,18 C 14.7,18 12,15.3 12,12 Z" fill="#1abcfe" />
+        <path d="M 0,18 C 0,14.7 2.7,12 6,12 L 12,12 L 12,18 C 12,21.3 9.3,24 6,24 C 2.7,24 0,21.3 0,18 Z" fill="#0acf83" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">Figma</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">UI/UX &amp; Prototype</text>
+      <circle cx="145" cy="18" r="3" fill="#a855f7" opacity="0.8" />
+    </g>
+
+    <!-- 10. VS Code -->
+    <g transform="translate(704, 0)">
+      <rect width="164" height="58" rx="12" fill="url(#card-hover-1)" stroke="#007acc" stroke-opacity="0.3" stroke-width="1" />
+      <g transform="translate(17, 16)">
+        <path d="M 17,2 L 22,6 L 22,18 L 17,22 L 7,14 L 3,17 L 1,15 L 4,12 L 1,9 L 3,7 L 7,10 Z" fill="#007acc" />
+        <path d="M 17,2 L 22,6 L 17,11 Z" fill="#1f9cf0" />
+        <path d="M 17,22 L 22,18 L 17,13 Z" fill="#0066b8" />
+      </g>
+      <text x="56" y="30" class="font-sans" font-size="13" font-weight="700" fill="#f8fafc">VS Code</text>
+      <text x="56" y="44" class="font-mono" font-size="10" font-weight="500" fill="#94a3b8">Development IDE</text>
+      <circle cx="149" cy="18" r="3" fill="#007acc" opacity="0.8" />
+    </g>
+  </g>
+</svg>

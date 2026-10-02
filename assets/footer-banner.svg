@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 90" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="footer-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#c084fc" stop-opacity="1" />
+      <stop offset="75%" stop-color="#34d399" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="footer-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="center-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .neon-pulse { animation: pulseGlow 4s ease-in-out infinite; }
+    .mono { font-family: 'Fira Code', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif; }
+  </style>
+
+  <!-- Ambient Glow -->
+  <circle cx="470" cy="45" r="90" fill="url(#footer-glow)" />
+
+  <!-- Glowing Divider Line -->
+  <line x1="60" y1="20" x2="880" y2="20" stroke="url(#footer-line)" stroke-width="1.5" class="neon-pulse" />
+
+  <!-- Center Diamond / Tech Accent -->
+  <g transform="translate(470, 20)">
+    <circle cx="0" cy="0" r="5" fill="#060913" stroke="#c084fc" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="2" fill="#38bdf8" />
+  </g>
+
+  <!-- Footer Text: </> Devincarlozz </> -->
+  <g transform="translate(470, 52)" text-anchor="middle">
+    <text class="mono" font-size="14" font-weight="700">
+      <tspan fill="#38bdf8">&lt;/&gt;</tspan>
+      <tspan fill="#f8fafc"> Devincarlozz </tspan>
+      <tspan fill="#38bdf8">&lt;/&gt;</tspan>
+    </text>
+  </g>
+
+  <!-- Subtext: Thanks for visiting! -->
+  <text x="470" y="72" class="sans" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="1">
+    Designed with passion • Thanks for visiting!
+  </text>
+</svg>
